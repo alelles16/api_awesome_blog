@@ -81,8 +81,12 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'awesome_blog_db',
+        'USER': 'awesome',
+        'PASSWORD': 'random_pass',
+        'HOST': 'localhost',
+        'PORT': '5432',
     }
 }
 
@@ -129,7 +133,6 @@ STATIC_URL = '/static/'
 GRAPHENE = {
     'SCHEMA': 'blog.schema.schema',
 }
-
 
 CORS_ORIGIN_ALLOW_ALL = False
 CORS_ORIGIN_WHITELIST = ("http://192.168.3.37:8080",)
